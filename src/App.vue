@@ -1,5 +1,5 @@
 <template>
-  <div class="hc">🏨&nbsp;Host&nbsp;<strong>Central</strong></div>
+  <div class="hc"> <img src="@/assets/media/house.svg" width="24" /> Host <strong>Central</strong></div>
 </template>
 
 <style>
@@ -12,6 +12,15 @@
   min-height: 100vh;
   vertical-align: middle;
   align-items: center;
+}
+
+.hc img {
+  margin-bottom: .4rem;
+  margin-right: .4rem;
+}
+
+.hc strong {
+  margin-left: .3rem;
 }
 
 body,
