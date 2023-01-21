@@ -9,6 +9,8 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.4.1",
+    "sass": "^1.57.1",
     "vue": "^3.2.45"
   },
   "devDependencies": {
