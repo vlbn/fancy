@@ -1,9 +1,55 @@
+<script setup>
+
+import { ref } from "vue";
+
+let huesped = ref("Mr Doe");
+
+let voluntarios = ref([
+  { nombre: "jon" },
+  { nombre: "mike" },
+  { nombre: "boy" }
+]);
+
+let idiomaDeMensaje = ref([
+  { tag: "esp", label: "Español" },
+  { tag: "eng", label: "English" }
+]);
+
+let horaDeLlegada = ref("16:20");
+
+let alojamientos = ref([
+  { tag: "bruc", label: "Bruc" },
+  { tag: "mallorca", label: "Mallorca" },
+  { tag: "traveler", label: "Traveller" },
+  { tag: "blanes", label: "Blanes" },
+  { tag: "estudio", label: "Estudio" },
+  { tag: "boqueria", label: "Boquería" }
+]);
+
+let avisoLateCheckin = ref(false);
+
+let vistaPrevia = ref(null);
+
+</script>
+
 <template>
-  <div class="hc"> <img src="@/assets/media/house.svg" width="24" /> Host <strong>Central</strong></div>
+  <ul>
+    <li>{{ huesped }}</li>
+    <li>{{ voluntarios }}</li>
+    <li>{{ idiomaDeMensaje }}</li>
+    <li>{{ horaDeLlegada }}</li>
+    <li>{{ alojamientos }}</li>
+    <li>{{ avisoLateCheckin }}</li>
+    <li>{{ vistaPrevia }}</li>
+  </ul>
 </template>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+
+li {
+  padding: 2rem;
+}
 
 .hc {
   display: flex;
