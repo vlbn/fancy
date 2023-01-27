@@ -2,7 +2,7 @@
 import { onMounted, ref, toRefs } from "vue";
 import { supabase } from "@/helpers/supabase";
 
-import Avatar from "@/components/user/Avatar.vue";
+import Avatar from "@/components/TheAvatar.vue";
 
 const props = defineProps(["session"]);
 const { session } = toRefs(props);
