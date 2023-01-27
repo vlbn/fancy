@@ -1,19 +1,21 @@
 <script setup>
-import { inject } from "vue";
+import { useUser } from "@/helpers/supabase";
 //
 
 import IconFingerPrint from "@/components/icons/IconFingerPrint.vue";
 //
 
-const { session } = inject("authSession");
+const {
+  state: { usuario },
+} = useUser();
 //
 </script>
 
 <template>
   <div class="is-fixed-bottom">
-    <div v-if="session">
+    <div v-if="usuario">
       <h1>
-        <mark>{{ session.user.email }}</mark>
+        <mark>{{ usuario.email }}</mark>
       </h1>
     </div>
     <div v-else>
