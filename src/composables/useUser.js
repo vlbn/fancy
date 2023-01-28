@@ -5,8 +5,11 @@ const state = reactive({
 });
 
 export function useUser() {
-  
+  const handleState = (value) => {
+    state.usuario = value;
+  };
   return {
     state: toRefs(readonly(state)),
+    handleState
   };
 }

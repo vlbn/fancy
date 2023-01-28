@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from "vue";
-import { useUser, handleLogin } from "@/helpers/supabase";
+import { handleLogin } from "@/helpers/supabase";
+
+//
+import { useUser } from "@/composables/useUser";
 
 //
 const {

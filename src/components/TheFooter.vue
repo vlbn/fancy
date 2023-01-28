@@ -1,5 +1,5 @@
 <script setup>
-import { useUser } from "@/helpers/supabase";
+import { useUser } from "@/composables/useUser";
 //
 
 import IconFingerPrint from "@/components/icons/IconFingerPrint.vue";

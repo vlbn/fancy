@@ -1,5 +1,6 @@
 <script setup>
-import { logOut, useUser } from "@/helpers/supabase";
+import { logOut } from "@/helpers/supabase";
+import { useUser } from "@/composables/useUser";
 //
 
 import IconUnLocked from "@/components/icons/IconUnLocked.vue";
@@ -17,7 +18,7 @@ const {
     <div v-if="usuario != null">
       <IconUnLocked />
       <button @click="logOut">logout</button>
-      <h1>{{ usuario }}</h1>
+      <h1>{{ usuario.id }}</h1>
     </div>
     <div v-else>
       <IconIsLocked />
