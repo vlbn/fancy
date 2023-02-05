@@ -5,21 +5,33 @@ const routes = [
     path: "/",
     name: "dashboard",
     component: () => import("@/views/DashBoard.vue"),
-  },
-  {
-    path: "/user",
-    name: "user",
-    component: () => import("@/views/UserView.vue"),
+    meta: {
+      auth: false,
+    },
   },
   {
     path: "/auth",
     name: "auth",
     component: () => import("@/views/AuthView.vue"),
-  },    
+    meta: {
+      auth: false,
+    },
+  },
+  {
+    path: "/user",
+    name: "user",
+    component: () => import("@/views/UserView.vue"),
+    meta: {
+      auth: true,
+    },
+  },
   {
     path: "/:catchAll(.*)",
     name: "notFound",
     component: () => import("@/views/NotFound.vue"),
+    meta: {
+      auth: false,
+    },
   },
 ];
 

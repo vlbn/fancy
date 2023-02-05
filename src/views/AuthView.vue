@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { supabase } from "@/helpers/supabase";
+import router from "@/router";
 
 const loading = ref(false);
 const email = ref("");
@@ -19,6 +20,7 @@ const handleLogin = async () => {
     }
   } finally {
     loading.value = false;
+    router.push("/");
   }
 };
 </script>

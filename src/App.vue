@@ -6,7 +6,6 @@ import { RouterView } from "vue-router";
 //
 import TheHeader from "./components/TheHeader.vue";
 import TheFooter from "./components/TheFooter.vue";
-import MagicLink from "./components/auth/MagicLink.vue";
 
 //
 import { useUser } from "@/composables/useUser";
@@ -41,8 +40,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <RouterView />
-  <MagicLink />
   <TheHeader />
+  <RouterView />
   <TheFooter />
 </template>
