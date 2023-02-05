@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted } from "vue";
 import { supabase } from "@/helpers/supabase.js";
+import { RouterView } from "vue-router";
 
 //
 import TheHeader from "./components/TheHeader.vue";
@@ -40,6 +41,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <RouterView />
   <MagicLink />
   <TheHeader />
   <TheFooter />
