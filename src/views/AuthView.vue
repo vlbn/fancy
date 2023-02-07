@@ -1,10 +1,16 @@
 <script setup>
-import { ref } from "vue";
+import { ref, onBeforeMount } from "vue";
 import { supabase } from "@/helpers/supabase";
 import router from "@/router";
 
-const loading = ref(false);
-const email = ref("");
+import { useUser } from "@/composables/useUser";
+const {
+  state: { usuario },
+} = useUser();
+//
+
+let loading = ref(false);
+let email = ref("");
 
 const handleLogin = async () => {
   try {
@@ -13,33 +19,46 @@ const handleLogin = async () => {
       email: email.value,
     });
     if (error) throw error;
-    alert("Check your email for the login link!");
+    alert("check your email for the login link!");
   } catch (error) {
     if (error instanceof Error) {
       alert(error.message);
     }
   } finally {
     loading.value = false;
-    router.push("/");
+    email.value = "";
+    console.log("finalmente");
+    if (!loading) {
+      router.push("/");
+    }
   }
 };
+
+onBeforeMount(() => {
+  if (usuario.value != null) {
+    router.push("/");
+  }
+});
 </script>
 
 <template>
-  <form @submit.prevent="handleLogin">
-    <div>
-      <p class="description">sign in via magic link with your email below</p>
+  <div>
+    <form @submit.prevent="handleLogin">
       <div>
-        <input type="email" placeholder="your email" v-model="email" />
+        <p class="description">sign in via magic link with your email below</p>
+        <div>
+          <input type="email" placeholder="your email" v-model="email" />
+        </div>
+        <div>
+          <input
+            type="submit"
+            class="button block"
+            :value="loading ? 'loading' : 'send magic link'"
+            :disabled="loading"
+          />
+        </div>
       </div>
-      <div>
-        <input
-          type="submit"
-          class="button block"
-          :value="loading ? 'loading' : 'send magic link'"
-          :disabled="loading"
-        />
-      </div>
-    </div>
-  </form>
+    </form>
+  </div>
+  <div></div>
 </template>
