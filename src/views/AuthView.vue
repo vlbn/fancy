@@ -9,6 +9,10 @@ const {
 } = useUser();
 //
 
+if (usuario) {
+    router.push("/dashboard");
+  }
+
 let loading = ref(false);
 let email = ref("");
 
@@ -34,11 +38,11 @@ const handleLogin = async () => {
   }
 };
 
-onBeforeMount(() => {
-  if (usuario.value != null) {
-    router.push("/");
-  }
-});
+// onBeforeMount(() => {
+//   if (usuario) {
+//     router.push("/dashboard");
+//   }
+// });
 </script>
 
 <template>

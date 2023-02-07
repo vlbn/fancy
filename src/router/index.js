@@ -37,20 +37,20 @@ supabase.auth.getSession().then(({ data }) => {
 const routes = [
   {
     path: "/",
-    name: "dashboard",
-    component: () => import("@/views/DashBoard.vue"),
-    meta: {
-      requiresAuth: true,
-      title: "Dashboard",
-    },
-  },
-  {
-    path: "/auth",
     name: "auth",
     component: () => import("@/views/AuthView.vue"),
     meta: {
       requiresAuth: false,
       title: "Conectar",
+    },
+  },  
+  {
+    path: "/dashboard",
+    name: "dashboard",
+    component: () => import("@/views/DashBoard.vue"),
+    meta: {
+      requiresAuth: false,
+      title: "Dashboard",
     },
   },
   {
