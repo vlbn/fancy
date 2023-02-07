@@ -24,7 +24,7 @@ const logOut = async () => {
     alert(error.message);
   } finally {
     //isLoading.value = false;
-    router.push("/auth");
+    router.push("/");
   }
 };
 </script>

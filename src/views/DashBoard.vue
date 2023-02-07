@@ -1,6 +1,6 @@
 <template>
   <mark @click="router.push('/user')" class="is-fixed-r">dashboard</mark>
-  <h1 @click="router.push('/auth')">ir a auth</h1>
+  <h1 @click="router.push('/greeting')">ir a greeee</h1>
 </template>
 
 <script setup>

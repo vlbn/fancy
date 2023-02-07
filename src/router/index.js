@@ -34,18 +34,9 @@ supabase.auth.getSession().then(({ data }) => {
   }
 });
 
-const routes = [
+const routes = [ 
   {
     path: "/",
-    name: "auth",
-    component: () => import("@/views/AuthView.vue"),
-    meta: {
-      requiresAuth: false,
-      title: "Conectar",
-    },
-  },  
-  {
-    path: "/dashboard",
     name: "dashboard",
     component: () => import("@/views/DashBoard.vue"),
     meta: {
@@ -113,7 +104,7 @@ router.beforeEach((to, from, next) => {
 router.beforeEach((to, from) => {
   if (to.meta.requiresAuth && !isConnected) {
     return {
-      path: "/auth",
+      path: "/",
       //query: { redirect: to.fullPath },
     };
   }

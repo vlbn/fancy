@@ -11,8 +11,8 @@ const {
 
 onBeforeMount(() => {
   console.log(usuario.value);
-  if (usuario.value === null) {
-    router.push("/auth");
+  if (!usuario) {
+    router.push("/");
   } else {
     router.push("/user");
   }
