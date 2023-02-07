@@ -12,14 +12,14 @@ const { handleState } = useUser();
 let isConnected = ref(false);
 
 // check for session state
-await supabase.auth.onAuthStateChange((_, _session) => {
+supabase.auth.onAuthStateChange((_, _session) => {
   if (!_session) {
     handleState(null);
   }
 });
 
 // fetch session state & user data
-await supabase.auth.getSession().then(({ data }) => {
+supabase.auth.getSession().then(({ data }) => {
   console.log("getting session.." + `\n` + "data is: " + data.session);
   if (data != null) {
     const { session } = data;
