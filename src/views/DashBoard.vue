@@ -1,6 +1,7 @@
 <script setup>
-import { useUser } from "@/composables/useUser";
 import AuthMagicLink from "@/components/auth/AuthMagicLink.vue";
+
+import { useUser } from "@/composables/useUser";
 const {
   state: { usuario },
 } = useUser();

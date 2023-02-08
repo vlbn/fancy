@@ -1,14 +1,10 @@
 <script setup>
-import { useUser } from "@/composables/useUser";
-//
-
 import IconFingerPrint from "@/components/icons/IconFingerPrint.vue";
-//
 
+import { useUser } from "@/composables/useUser";
 const {
   state: { usuario },
 } = useUser();
-//
 </script>
 
 <template>

@@ -1,19 +1,15 @@
 <script setup>
 import { supabase } from "@/helpers/supabase";
-import { useUser } from "@/composables/useUser";
-//
 
 import router from "@/router";
-//
 
 import IconUnLocked from "@/components/icons/IconUnLocked.vue";
 import IconIsLocked from "@/components/icons/IconIsLocked.vue";
-//
 
+import { useUser } from "@/composables/useUser";
 const {
   state: { usuario },
 } = useUser();
-//
 
 const logOut = async () => {
   try {

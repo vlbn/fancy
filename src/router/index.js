@@ -1,13 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-//
 import { supabase } from "@/helpers/supabase.js";
 
-//
 import { useUser } from "@/composables/useUser";
 const { handleState } = useUser();
 
-//
 let isConnected = false;
 
 // check for session state
@@ -33,7 +30,7 @@ supabase.auth.getSession().then(({ data }) => {
   }
 });
 
-const routes = [ 
+const routes = [
   {
     path: "/",
     name: "dashboard",
@@ -49,7 +46,7 @@ const routes = [
     component: () => import("@/views/UserView.vue"),
     meta: {
       requiresAuth: true,
-      title: "Datos de Usuario",
+      title: " ~ Datos de Usuario",
     },
   },
   {
@@ -58,7 +55,7 @@ const routes = [
     component: () => import("@/views/AboutView.vue"),
     meta: {
       requiresAuth: false,
-      title: "Acerca de..",
+      title: " ~ Acerca de..",
     },
   },
   {
@@ -67,7 +64,7 @@ const routes = [
     component: () => import("@/views/GreetingView.vue"),
     meta: {
       requiresAuth: true,
-      title: "Saludo",
+      title: " ~ Saludo",
     },
   },
   {
@@ -76,16 +73,16 @@ const routes = [
     component: () => import("@/views/PreView.vue"),
     meta: {
       requiresAuth: true,
-      title: "Vista Previa",
+      title: " ~ Vista Previa",
     },
-  },    
+  },
   {
     path: "/:catchAll(.*)",
     name: "notFound",
     component: () => import("@/views/NotFound.vue"),
     meta: {
       requiresAuth: false,
-      title: "404",
+      title: " ~ 404",
     },
   },
 ];
@@ -96,7 +93,9 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  document.title = `Host Central ~ ${to.meta.title}`;
+  if (isConnected) {
+    document.title = `Host Central ${to.meta.title}`;
+  }
   next();
 });
 
