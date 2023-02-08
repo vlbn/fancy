@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { ref } from "vue";
 
 //
 import { supabase } from "@/helpers/supabase.js";
@@ -9,7 +8,7 @@ import { useUser } from "@/composables/useUser";
 const { handleState } = useUser();
 
 //
-let isConnected = ref(false);
+let isConnected = false;
 
 // check for session state
 supabase.auth.onAuthStateChange((_, _session) => {
@@ -41,7 +40,7 @@ const routes = [
     component: () => import("@/views/DashBoard.vue"),
     meta: {
       requiresAuth: false,
-      title: "Dashboard",
+      title: "",
     },
   },
   {
@@ -77,7 +76,7 @@ const routes = [
     component: () => import("@/views/PreView.vue"),
     meta: {
       requiresAuth: true,
-      title: "Vista previa",
+      title: "Vista Previa",
     },
   },    
   {
@@ -105,7 +104,7 @@ router.beforeEach((to, from) => {
   if (to.meta.requiresAuth && !isConnected) {
     return {
       path: "/",
-      //query: { redirect: to.fullPath },
+      query: { redirect: to.fullPath },
     };
   }
 });

@@ -1,15 +1,14 @@
-<template>
-  <mark @click="router.push('/user')" class="is-fixed-r">dashboard</mark>
-  <h1 @click="router.push('/greeting')">ir a greeee</h1>
-  <h1 @click="router.push('/about')">ebaou</h1>
-</template>
-
 <script setup>
-import router from "@/router";
+import { useUser } from "@/composables/useUser";
+import AuthMagicLink from "@/components/auth/AuthMagicLink.vue";
+const {
+  state: { usuario },
+} = useUser();
 </script>
 
-<style scoped>
-h1 {
-  margin-top: 15rem;
-}
-</style>
+<template>
+  <div class="is-fixed-r" v-if="!usuario"><AuthMagicLink /></div>
+  <div class="is-fixed-r" v-else>
+    hola: <mark>{{ usuario.email }}</mark>
+  </div>
+</template>
