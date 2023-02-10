@@ -26,10 +26,12 @@ const logOut = async () => {
 </script>
 
 <template>
-  <div class="is-fixed-top">
-    <div v-if="usuario">
-      <IconUnLocked />
-      <button @click="logOut">logout</button>
+  <div class="box">
+    <div v-if="usuario" class="box">
+      <button class="button is-primary is-rounded is-small" @click="logOut">
+        <div class="p-3"><IconUnLocked /></div>
+        logout
+      </button>
       <h1>{{ usuario.id }}</h1>
     </div>
     <div v-else>
