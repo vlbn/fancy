@@ -1,16 +1,16 @@
 body,
 html {
   overflow-x: hidden !important;
-  margin: 0px;
-  padding: 0px;
+  margin: 0px !important;
+  padding: 0px !important;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 img {
@@ -23,19 +23,19 @@ img {
 }
 
 *::-webkit-scrollbar {
-  width: 7px;
+  width: 7px !important;
 }
 
 *::-webkit-scrollbar-track {
-  background: transparent;
+  background: transparent !important;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #eab22f;
-  border-radius: 5px;
+  background-color: #9c9c9c !important;
+  border-radius: 5px !important;
 }
 
 :root {
-  scrollbar-color: #eab22f transparent !important;
+  scrollbar-color: #9c9c9c transparent !important;
   scrollbar-width: thin !important;
 }

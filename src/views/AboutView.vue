@@ -23,7 +23,7 @@ import router from "@/router";
     ratione asperiores amet illum, cupiditate nobis quod ab, soluta, quasi rerum nulla ut
     quisquam perspiciatis dolores animi quae inventore?
   </h1>
-  <h1>
+  <h1 class="has-text-primary p-6 m-6">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio repudiandae veniam
     ratione asperiores amet illum, cupiditate nobis quod ab, soluta, quasi rerum nulla ut
     quisquam perspiciatis dolores animi quae inventore?
