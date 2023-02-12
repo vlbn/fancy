@@ -1,14 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
-
-// Set your brand colors
-$purple: #8a4d76;
-$pink: #fa7c91;
-$brown: #757763;
-$beige-light: #d0d1cd;
-$beige-lighter: #eff0eb;
-
-// Update Bulma’s global variables
-$family-sans-serif: "Poppins", sans-serif;
+// global vars
 $grey-dark: $brown;
 $grey-light: $beige-light;
 $primary: $purple;
@@ -16,13 +6,13 @@ $link: $pink;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
 
-// Update some of Bulma’s component variables
+// component vars
 $body-background-color: $beige-lighter;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
-// Import only what you need from Bulma
+// only what we need
 @import "bulma/sass/utilities/_all.sass";
 
 @import "bulma/sass/helpers/_all.sass";
