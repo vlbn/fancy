@@ -45,17 +45,64 @@ import router from "@/router";
     eligendi nobis maxime sapiente mollitia tempore? Eius officiis necessitatibus modi.
     Similique nihil voluptates hic qui, totam nulla?
   </div>
-  <h1>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio repudiandae veniam
-    ratione asperiores amet illum, cupiditate nobis quod ab, soluta, quasi rerum nulla ut
-    quisquam perspiciatis dolores animi quae inventore?
-  </h1>
-  <button class="button-29" role="button">Button 29</button>
-  <button class="button-83" role="button">Button 83</button>
-  <button class="button-83" role="button">Button 82</button>
-  <h1>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio repudiandae veniam
-    ratione asperiores amet illum, cupiditate nobis quod ab, soluta, quasi rerum nulla ut
-    quisquam perspiciatis dolores animi quae inventore?
-  </h1>
+  <div class="niceBox-5 p-6 m-6">
+    <h1>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio repudiandae veniam
+      ratione asperiores amet illum, cupiditate nobis quod ab, soluta, quasi rerum nulla
+      ut quisquam perspiciatis dolores animi quae inventore?
+    </h1>
+  </div>
+  <div class="m-6"><button class="button-29" role="button">Button 29</button></div>
+  <div class="m-6"><button class="button-85" role="button">Button 83</button></div>
+  <div class="m-6"><button class="button-74" role="button">Button 82</button></div>
+  <div class="m-6"><button class="button-49" role="button">Button 82</button></div>
+  <div class="niceBox-6 p-6 m-6">
+    <h1>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio repudiandae veniam
+      ratione asperiores amet illum, cupiditate nobis quod ab, soluta, quasi rerum nulla
+      ut quisquam perspiciatis dolores animi quae inventore?
+    </h1>
+  </div>
+  <div class="niceBox-7 p-6 m-6">
+    <h1>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio repudiandae veniam
+      ratione asperiores amet illum, cupiditate nobis quod ab, soluta, quasi rerum nulla
+      ut quisquam perspiciatis dolores animi quae inventore?
+    </h1>
+  </div>
+
+  <div class="niceBox-8 p-6 m-6">
+    <h1>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio repudiandae veniam
+      ratione asperiores amet illum, cupiditate nobis quod ab, soluta, quasi rerum nulla
+      ut quisquam perspiciatis dolores animi quae inventore?
+    </h1>
+  </div>
+
+  <div class="checkbox-wrapper-12 p-6 m-6">
+    <div class="cbx">
+      <input id="cbx-12" type="checkbox" />
+      <label for="cbx-12"></label>
+      <svg width="15" height="14" viewbox="0 0 15 14" fill="none">
+        <path d="M2 8.36364L6.23077 12L13 2"></path>
+      </svg>
+    </div>
+  </div>
+
+  <div class="p-6 m-6">
+    <div class="checkbox-wrapper-55">
+      <label class="rocker rocker-small">
+        <input type="checkbox" />
+        <span class="switch-left">Yes</span>
+        <span class="switch-right">No</span>
+      </label>
+    </div>
+  </div>
+
+  <div class="m-6 p-6">
+    <div class="checkbox-wrapper-7">
+      <input class="tgl tgl-ios" id="cb2-7" type="checkbox" />
+      <label class="tgl-btn" for="cb2-7"></label>
+    </div>
+  </div>
 </template>
