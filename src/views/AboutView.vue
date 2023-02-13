@@ -40,7 +40,7 @@ import router from "@/router";
     eligendi nobis maxime sapiente mollitia tempore? Eius officiis necessitatibus modi.
     Similique nihil voluptates hic qui, totam nulla?
   </div>
-  <div class="m-6 p-6">
+  <div class="m-6 p-6 niceInput-1">
     <label>
       <input type="text" placeholder="Email Address" />
     </label>

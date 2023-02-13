@@ -28,7 +28,7 @@ const handleLogin = async () => {
 
 <template>
   <div v-if="!emailSent">
-    <form @submit.prevent="handleLogin">
+    <form @submit.prevent="handleLogin" class="niceInput-1">
       <p class="description">sign in via magic link with your email below</p>
       <input type="email" placeholder="your email" v-model="email" />
       <input
