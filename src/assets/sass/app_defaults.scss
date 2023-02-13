@@ -49,3 +49,13 @@ img {
   scrollbar-color: #9c9c9c transparent !important;
   scrollbar-width: thin !important;
 }
+
+::-moz-selection {
+  color: white;
+  background: #9c9c9c;
+}
+
+::selection {
+  color: white;
+  background: #9c9c9c;
+}
