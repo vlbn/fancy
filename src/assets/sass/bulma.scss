@@ -1,4 +1,5 @@
 // global vars
+
 $grey-dark: $brown;
 $grey-light: $beige-light;
 $primary: $purple;
@@ -7,12 +8,14 @@ $widescreen-enabled: false;
 $fullhd-enabled: false;
 
 // component vars
+
 $body-background-color: $beige-lighter;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
 
 // only what we need
+
 @import "bulma/sass/utilities/_all.sass";
 
 @import "bulma/sass/helpers/_all.sass";
@@ -20,7 +23,6 @@ $input-shadow: none;
 
 @import "bulma/sass/base/_all.sass";
 
-@import "bulma/sass/elements/button.sass";
 @import "bulma/sass/elements/container.sass";
 @import "bulma/sass/elements/title.sass";
 

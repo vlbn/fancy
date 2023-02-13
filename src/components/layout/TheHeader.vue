@@ -27,14 +27,14 @@ const logOut = async () => {
 
 <template>
   <div class="box">
-    <div v-if="usuario" class="box">
-      <button class="button is-primary is-rounded is-small" @click="logOut">
+    <div v-if="usuario" class="m-1 p-3">
+      <button class="button-29" @click="logOut">
         <div class="p-3"><IconUnLocked /></div>
         logout
       </button>
-      <h1>{{ usuario.id }}</h1>
+      <h1 class="my-3">{{ usuario.id }}</h1>
     </div>
-    <div v-else>
+    <div v-else class="button-29 m-1 p-3">
       <IconIsLocked />
     </div>
     <ul>
