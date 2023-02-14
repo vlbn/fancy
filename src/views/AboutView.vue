@@ -12,7 +12,7 @@ import router from "@/router";
   </div>
   <button class="button-29" role="button">Loading button</button>
   <mark class="is-fixed-r">
-    <h1>About</h1>
+    <h1 class="title is-1">About</h1>
     <p>
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium ad laborum
       fugit quod! Necessitatibus eum consequuntur aut. Sapiente quod mollitia ullam natus,
