@@ -3,6 +3,13 @@ import router from "@/router";
 </script>
 
 <template>
+  <div class="columns m-6">
+    <div class="column">1</div>
+    <div class="column">2</div>
+    <div class="column">3</div>
+    <div class="column">4</div>
+    <div class="column">5</div>
+  </div>
   <button class="button-29" role="button">Loading button</button>
   <mark class="is-fixed-r">
     <h1>About</h1>
