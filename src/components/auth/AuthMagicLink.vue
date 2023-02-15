@@ -6,6 +6,8 @@ let loading = ref(false);
 let email = ref("");
 let emailSent = false;
 
+let x = !loading ? "z" : "x";
+
 const handleLogin = async () => {
   try {
     loading.value = true;
@@ -27,16 +29,15 @@ const handleLogin = async () => {
 </script>
 
 <template>
-  <div v-if="!emailSent">
+  <div v-if="!emailSent" class="m-6">
     <form @submit.prevent="handleLogin" class="niceInput-1">
-      <p class="description">sign in via magic link with your email below</p>
+      <p class="description my-5">sign in via magic link with your email below</p>
       <input type="email" placeholder="your email" v-model="email" />
-      <input
-        type="submit"
-        class="button-29"
-        :value="loading ? 'sending..' : 'send magic link'"
-        :disabled="loading"
-      />
+      <button class="button-82-pushable my-5" role="button" :disabled="loading">
+        <span class="button-82-shadow"></span>
+        <span class="button-82-edge"></span>
+        <span class="button-82-front text"> {{ x }} </span>
+      </button>
     </form>
   </div>
   <div v-else>
