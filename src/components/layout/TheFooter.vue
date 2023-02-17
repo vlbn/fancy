@@ -8,13 +8,13 @@ const {
 </script>
 
 <template>
-  <div class="is-fixed-bottom">
+  <div class="is-fixed-bottom p-1">
     <div v-if="usuario">
       <h1>
         <mark>{{ usuario.email }}</mark>
       </h1>
     </div>
-    <div v-else>
+    <div v-else class="cargando m-3">
       <IconFingerPrint />
     </div>
   </div>
