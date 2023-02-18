@@ -50,33 +50,6 @@ const routes = [
     },
   },
   {
-    path: "/about",
-    name: "about",
-    component: () => import("@/views/AboutView.vue"),
-    meta: {
-      requiresAuth: false,
-      title: " ~ Acerca de..",
-    },
-  },
-  {
-    path: "/greeting",
-    name: "greeting",
-    component: () => import("@/views/GreetingView.vue"),
-    meta: {
-      requiresAuth: true,
-      title: " ~ Saludo",
-    },
-  },
-  {
-    path: "/preview",
-    name: "preview",
-    component: () => import("@/views/PreView.vue"),
-    meta: {
-      requiresAuth: true,
-      title: " ~ Vista Previa",
-    },
-  },
-  {
     path: "/:catchAll(.*)",
     name: "notFound",
     component: () => import("@/views/NotFound.vue"),
