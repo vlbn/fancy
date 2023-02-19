@@ -26,8 +26,8 @@ const logOut = async () => {
 </script>
 
 <template>
-  <div class="box">
-    <div v-if="usuario" class="m-1 p-3">
+  <div class="is-fixed-top-right m-3">
+    <div v-if="usuario">
       <button class="button-29" @click="logOut">
         <div class="p-3"><IconUnLocked /></div>
         logout
@@ -37,12 +37,5 @@ const logOut = async () => {
     <div v-else class="button-29 m-1 p-3">
       <IconIsLocked />
     </div>
-    <ul>
-      <li @click="router.push('/about')">about</li>
-      <li @click="router.push('/preview')">preview</li>
-      <li @click="router.push('/user')">user</li>
-      <li @click="router.push('/greeting')">greeting</li>
-      <li @click="router.push('/x')">x</li>
-    </ul>
   </div>
 </template>
