@@ -1,6 +1,6 @@
 {
   "name": "hostcentral",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -12,8 +12,7 @@
     "@supabase/supabase-js": "^2.4.1",
     "bulma": "^0.9.4",
     "sass": "^1.57.1",
-    "vue": "^3.2.45",
-    "vue-router": "^4.1.6"
+    "vue": "^3.2.45"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",

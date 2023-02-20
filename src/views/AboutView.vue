@@ -1,7 +1,3 @@
-<script setup>
-import router from "@/router";
-</script>
-
 <template>
   <div class="columns m-6">
     <div class="column">1</div>
@@ -20,7 +16,7 @@ import router from "@/router";
       eum porro, excepturi est itaque veritatis quibusdam harum.
     </p>
 
-    <h1 @click="router.push('/user')">
+    <h1>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio repudiandae veniam
       ratione asperiores amet illum, cupiditate nobis quod ab, soluta, quasi rerum nulla
       ut quisquam perspiciatis dolores animi quae inventore?
