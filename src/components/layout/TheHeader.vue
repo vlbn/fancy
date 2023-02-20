@@ -1,8 +1,6 @@
 <script setup>
 import { supabase } from "@/helpers/supabase";
 
-import router from "@/router";
-
 import IconUnLocked from "@/components/icons/IconUnLocked.vue";
 import IconIsLocked from "@/components/icons/IconIsLocked.vue";
 
@@ -20,7 +18,6 @@ const logOut = async () => {
     alert(error.message);
   } finally {
     //isLoading.value = false;
-    router.push("/");
   }
 };
 </script>
