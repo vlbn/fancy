@@ -1,8 +1,8 @@
 <script setup>
 import { defineAsyncComponent, shallowRef } from "vue";
 
-import TheHeader from "./components/layout/TheHeader.vue";
-import TheFooter from "./components/layout/TheFooter.vue";
+const TheHeader = defineAsyncComponent(() => import("./components/layout/TheHeader.vue"));
+const TheFooter = defineAsyncComponent(() => import("./components/layout/TheFooter.vue"));
 
 const linkMagico = defineAsyncComponent(() =>
   import("./components/auth/AuthMagicLink.vue")
@@ -10,11 +10,14 @@ const linkMagico = defineAsyncComponent(() =>
 
 const nicePic = defineAsyncComponent(() => import("./components/media/NicePhoto.vue"));
 
-const componenteActivo = shallowRef(linkMagico);
+const componenteActivo = shallowRef(nicePic);
 </script>
 
 <template>
   <TheHeader />
-  <component :is="componenteActivo"></component>
+  <component
+    :is="componenteActivo"
+    path="https://picsum.photos/2000/3000?random=1"
+  ></component>
   <TheFooter />
 </template>
