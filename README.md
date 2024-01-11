@@ -1,2 +1,2 @@
-# fancy components
-🧰 set of custom fancy and nice components
+# fancy
+🧰 set of fancy components
