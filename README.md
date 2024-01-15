@@ -1,2 +1,2 @@
 # fancy
-🧰 set of fancy components
+📦 fancy **VUE** components
