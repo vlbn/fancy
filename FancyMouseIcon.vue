@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, watch } from "vue";
+import { ref, onMounted } from "vue";
 import { gsap } from "gsap";
 
 const props = defineProps({
@@ -11,19 +11,21 @@ const props = defineProps({
     type: String,
     default: "#ffffff",
   },
-  scrollWheelDir: {
-    default: false,
+  colorC: {
+    type: String,
+    default: "#d7d7d7",
   },
 });
 
 let colorA_ = ref(props.colorA);
 let colorB_ = ref(props.colorB);
+let colorC_ = ref(props.colorC);
 
 // mouse-wheel TimeLine instance
 let mwTl = ref();
 
 onMounted(() => {
-  // initial values
+  // initial color values
   gsap.set(".mouse-wheel", {
     background: colorA_.value,
     autoAlpha: 0,
@@ -61,18 +63,24 @@ onMounted(() => {
   //
 });
 
-let isUserScrolling = ref(props.scrollWheelDir);
-
-watch(isUserScrolling, () => {
-  if (isUserScrolling.value) {
-    mwTl.reverse(0);
-  } else {
+// detect scroll direction and play/reverse the GSAP mouse-wheel time line animation
+var scrollPos = 0;
+window.addEventListener("scroll", function () {
+  if (document.body.getBoundingClientRect().top > scrollPos) {
     mwTl.reverse();
     mwTl.play(0);
+    gsap.set(".mouse-wheel", {
+      background: colorA_.value,
+    });
+  } else {
+    scrollPos = document.body.getBoundingClientRect().top;
+    mwTl.reverse(0);
+    gsap.set(".mouse-wheel", {
+      background: colorC_.value,
+    });
   }
 });
 
-//
 </script>
 
 <template>
@@ -85,15 +93,15 @@ watch(isUserScrolling, () => {
 
 <style scoped>
 .mouse-container {
-  margin: 3rem;
   width: 25px;
   height: 40px;
 }
+
 .mouse-body {
   display: flex;
   justify-content: center;
   height: 100%;
-  border: 0.1px solid #2e2e2e44;
+  border: 0.1px solid v-bind(colorC_);
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   border-radius: 15px;
