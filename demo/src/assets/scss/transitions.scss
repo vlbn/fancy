@@ -1,0 +1,60 @@
+/*
+
+    flip
+
+*/
+
+.flip-enter-from,
+.flip-leave-to {
+    opacity: 0.9;
+    transition: all 0.1s ease-out;
+    animation: all 0.1s;
+    transform: translateZ(-350px) rotateX(45deg);
+    filter: blur(4px);
+}
+
+.flip-leave-from,
+.flip-enter-to {
+    opacity: 1;
+    transform: translateZ(150px) rotateY(90deg);
+    transition: all 0.1s ease-out;
+    animation: all 0.1s;
+    filter: blur(3px);
+}
+
+/*
+
+    fade
+
+*/
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+    transition: all 0.2s ease-out;
+    animation: all 0.2s;
+}
+
+.fade-leave-from,
+.fade-enter-to {
+    opacity: 1;
+    transition: all 0.2s ease-out;
+    animation: all 0.2s;
+}
+
+/*
+
+    moda
+
+*/
+
+.moda-enter-active,
+.moda-leave-active {
+    transition: all 0.25s ease;
+}
+
+.moda-enter-from,
+.moda-leave-to {
+    opacity: 0;
+    transform: scale(1.1);
+}

@@ -1,0 +1,190 @@
+/*
+
+  truly center, align and justify
+
+*/
+
+.centerXY {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+}
+
+/*
+
+  fill viewport
+
+*/
+
+.fv {
+  &-100 {
+    min-height: 100vh;
+  }
+  &-90 {
+    min-height: 90vh;
+  }
+  &-80 {
+    min-height: 80vh;
+  }
+  &-70 {
+    min-height: 70vh;
+  }
+  &-60 {
+    min-height: 60vh;
+  }
+  &-50 {
+    min-height: 50vh;
+  }
+}
+
+/*
+
+  z-index
+
+*/
+
+.zi {
+  &-0 {
+    z-index: 0;
+  }
+  &-1 {
+    z-index: 1;
+  }
+  &-2 {
+    z-index: 2;
+  }
+  &-3 {
+    z-index: 3;
+  }
+  &-4 {
+    z-index: 4;
+  }
+  &-5 {
+    z-index: 5;
+  }
+  &-m1 {
+    z-index: -1;
+  }
+  &-m1 {
+    z-index: -2;
+  }
+  &-m1 {
+    z-index: -3;
+  }
+  &-m1 {
+    z-index: -4;
+  }
+  &-m1 {
+    z-index: -5;
+  }
+}
+
+/*
+
+  misc
+
+*/
+
+.iPoint {
+  cursor: pointer;
+}
+
+.iSpin {
+  &::after {
+    animation: spinAround 200ms infinite linear;
+    border: 2px solid rgb(224, 176, 31);
+    border-radius: 9999px;
+    border-right-color: transparent;
+    border-top-color: transparent;
+    content: "";
+    display: block;
+    height: 1em;
+    position: relative;
+    width: 1em;
+  }
+}
+
+.iTruncate {
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  max-width: 10rem;
+}
+
+mark {
+  vertical-align: middle;
+  display: inline-flex;
+  margin: 0rem 0.1rem;
+  padding: 0rem 0.2rem;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* 
+
+  input Switch
+
+*/
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $grey;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: $paper;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: $blue;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px $blue;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

@@ -1,0 +1,22 @@
+{
+  "name": "demo",
+  "version": "0.0.15",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "bs": "browser-sync start --proxy 'localhost:5173' --no-open"
+  },
+  "dependencies": {
+    "bulma": "^0.9.4",
+    "gsap": "^3.12.4",
+    "sass": "^1.69.7",
+    "vue": "^3.4.13"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.2",
+    "vite": "^5.0.10"
+  }
+}

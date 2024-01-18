@@ -1,0 +1,64 @@
+/* 
+
+  is-fixed
+
+*/
+
+.is-fixed {
+    &-t {
+        position: fixed;
+        top: 0.75rem;
+        width: 100%;
+        div {
+            margin: 0 auto;
+            width: auto;
+        }
+    }
+    &-tr {
+        position: fixed;
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+    &-tl {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+    }
+    &-b {
+        position: fixed;
+        bottom: 0.75rem;
+        width: 100%;
+        div {
+            margin: 0 auto;
+            width: auto;
+        }
+    }
+    &-br {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+    }
+    &-bl {
+        position: fixed;
+        left: 1rem;
+        bottom: 1rem;
+    }
+    &-l {
+        position:fixed;
+        height: 100vh;
+        top: 0px;
+        bottom: 0px;
+        left: 1rem;
+        display: flex;
+        align-items: center;    
+    }
+    &-r {
+        position:fixed;
+        height: 100vh;
+        top: 0px;
+        bottom: 0px;
+        right: 1rem;
+        display: flex;
+        align-items: center;    
+    }    
+}
