@@ -24,52 +24,51 @@ let fancy = ref(false);
     </div>
   </Transition>
 
-  <Transition name="fade">
-    <div class="is-fixed-t mt-6">
-      <FancyMouseIcon v-if="fancy" />
-    </div>
-  </Transition>
-
-  <div class="m-0 is-fixed-bl">
-    <a href="https://github.com/vlbn/fancy">
-      <GitHubLogo customColor="black iPoint" />
-    </a>
-  </div>
-
   <section class="is-flex is-justify-content-center fv-100 is-align-items-center">
-    <div class="columns">
-      <div class="columns container">
 
-        <div class="column is-full">
+    <Transition name="fade">
+      <Suspense>
+        <SectionBelow />
+      </Suspense>
+    </Transition>
 
-          <PkgIcon class="mr-1" /> fancy <mark><b>VUE</b></mark> components
-
-          <div class="field is-grouped is-grouped-multiline">
-            <div class="control my-5">
-              <div class="tags has-addons">
-                <span class="tag is-dark">gsap</span>
-                <span class="tag is-info">3.12.4</span>
-              </div>
-            </div>
-            <div class="control my-5">
-              <div class="tags has-addons">
-                <span class="tag is-dark">vue</span>
-                <span class="tag is-info">3.4.13</span>
-              </div>
-            </div>
+    <div class="is-fixed-tl">
+      <PkgIcon class="mr-1" /> fancy <mark><b>VUE</b></mark> components
+      <div class="field is-grouped is-grouped-multiline">
+        <div class="control my-5">
+          <div class="tags has-addons">
+            <span class="tag is-dark">gsap</span>
+            <span class="tag is-info">3.12.4</span>
           </div>
-          <label class="switch">
-            <input type="checkbox" id="checkbox" v-model="fancy" />
-            <span class="slider round"></span>
-          </label>
         </div>
-
+        <div class="control my-5">
+          <div class="tags has-addons">
+            <span class="tag is-dark">vue</span>
+            <span class="tag is-info">3.4.13</span>
+          </div>
+        </div>
       </div>
+      <label class="switch">
+        <input type="checkbox" id="checkbox" v-model="fancy" />
+        <span class="slider round"></span>
+      </label>
     </div>
+
+    <Transition name="fade">
+      <div class="is-fixed-t mt-6">
+        <FancyMouseIcon v-if="fancy" />
+      </div>
+    </Transition>
+
+    <div class="m-0 is-fixed-bl">
+      <a href="https://github.com/vlbn/fancy">
+        <GitHubLogo customColor="black iPoint" />
+      </a>
+    </div>
+
   </section>
 
   <Transition name="fade">
-
     <Suspense>
       <template #default>
         <SectionBelow v-if="fancy" />
@@ -78,6 +77,5 @@ let fancy = ref(false);
         <div class="iSpin"></div>
       </template>
     </Suspense>
-
   </Transition>
 </template>
