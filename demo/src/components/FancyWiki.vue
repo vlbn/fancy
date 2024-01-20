@@ -4,7 +4,7 @@ const article = await response.json();
 </script>
 
 <template>
-  <section class="is-flex is-justify-content-center fv-100 is-flex-direction-column is-align-items-center p-5">
+  <div class="is-flex is-justify-content-center fv-100 is-flex-direction-column is-align-items-center p-5">
 
     <div class="columns">
       <div class="columns container">
@@ -38,28 +38,30 @@ const article = await response.json();
       </div>
     </div>
 
-  </section>
+  </div>
 </template>
 
 <style scoped>
 .z {
   z-index: -3;
 }
-img {  filter: grayscale(1);
-    -webkit-filter: grayscale(1);
-    -moz-filter: grayscale(1);
-    opacity: .5;
+
+img {
+  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+  -moz-filter: grayscale(1);
+  opacity: .5;
 }
+
 a {
-  color:brown
+  color: brown
 }
+
 .title {
-  font-size: 6rem !important;
-  line-height: 5rem;
+  font-size: 4rem !important;
+  line-height: 3rem;
   margin-left: -3.3rem;
   text-shadow: 2px 2px 0px rgba(255, 255, 255, 1),
-               5px 4px 0px rgba(0, 0, 0, 0.15);
+    5px 4px 0px rgba(0, 0, 0, 0.15);
 
-}
-
-</style>
+}</style>
