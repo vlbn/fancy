@@ -8,6 +8,7 @@ import GitHubLogo from "./components/logos/GitHubLogo.vue";
 
 import FancyCursor from "./components/FancyCursor.vue";
 import FancyMouseIcon from "./components/FancyMouseIcon.vue";
+import FancyPreLoader from "./components/FancyPreLoader.vue";
 
 console.log("📦 fancy VUE components");
 console.log(version);
@@ -23,8 +24,8 @@ let fancy = ref(false);
   </Transition>
 
   <Transition name="fade">
-    <div class="is-fixed-t mt-6">
-      <FancyMouseIcon v-if="fancy" />
+    <div class="is-fixed-t mt-6" v-if="fancy">
+      <FancyMouseIcon /> 
     </div>
   </Transition>
 
@@ -63,7 +64,7 @@ let fancy = ref(false);
   <Transition name="fade" mode="out-in">
     
     <section v-if="!fancy" class="is-flex is-justify-content-center fv-100 is-align-items-center">
-      click!
+      click <mark @click="fancy = true" class="iPoint">here</mark>!
     </section>
 
     <section v-else>
@@ -75,7 +76,7 @@ let fancy = ref(false);
           </template>
 
           <template #fallback>
-            <progress class="progress is-small is-primary" max="100">15%</progress>
+            <FancyPreLoader />
           </template>
 
         </Suspense>
@@ -89,7 +90,7 @@ let fancy = ref(false);
           </template>
 
           <template #fallback>
-            <progress class="progress is-small is-primary" max="100">15%</progress>
+            <FancyPreLoader />
           </template>
 
         </Suspense>
