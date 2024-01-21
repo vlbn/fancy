@@ -1,8 +1,6 @@
 <template>
-
   <div class="cursor-a" :class="cursorA"></div>
   <div class="cursor-b" :class="cursorB"></div>
-
 </template>
 
 <script setup>
@@ -152,5 +150,4 @@ $blue: #273849;
     mix-blend-mode: multiply;
   }
 }
-
 </style>
