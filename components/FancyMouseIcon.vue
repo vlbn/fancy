@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import { gsap } from "gsap";
 
 const props = defineProps({
@@ -65,7 +65,8 @@ onMounted(() => {
 
 // detect scroll direction and play/reverse the GSAP mouse-wheel time line animation
 var scrollPos = 0;
-window.addEventListener("scroll", function () {
+
+const detectScrollPos = () => {
   if (document.body.getBoundingClientRect().top > scrollPos) {
     mwTl.reverse();
     mwTl.play(0);
@@ -79,6 +80,12 @@ window.addEventListener("scroll", function () {
       background: colorC_.value,
     });
   }
+}
+
+window.addEventListener("scroll", detectScrollPos);
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", detectScrollPos);
 });
 
 </script>
