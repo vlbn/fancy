@@ -64,7 +64,7 @@ onMounted(() => {
 });
 
 // detect scroll direction and play/reverse the GSAP mouse-wheel time line animation
-var scrollPos = 0;
+let scrollPos = 0;
 
 const detectScrollPos = () => {
   if (document.body.getBoundingClientRect().top > scrollPos) {
