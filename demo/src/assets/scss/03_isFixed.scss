@@ -44,21 +44,21 @@
         bottom: 1rem;
     }
     &-l {
-        position:fixed;
+        position: fixed;
         height: 100vh;
         top: 0px;
         bottom: 0px;
         left: 1rem;
         display: flex;
-        align-items: center;    
+        align-items: center;
     }
     &-r {
-        position:fixed;
+        position: fixed;
         height: 100vh;
         top: 0px;
         bottom: 0px;
         right: 1rem;
         display: flex;
-        align-items: center;    
-    }    
+        align-items: center;
+    }
 }

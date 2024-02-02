@@ -1,0 +1,41 @@
+/*
+
+  z-index
+
+*/
+
+.zi {
+    &-0 {
+        z-index: 0;
+    }
+    &-1 {
+        z-index: 1;
+    }
+    &-2 {
+        z-index: 2;
+    }
+    &-3 {
+        z-index: 3;
+    }
+    &-4 {
+        z-index: 4;
+    }
+    &-5 {
+        z-index: 5;
+    }
+    &-m1 {
+        z-index: -1;
+    }
+    &-m2 {
+        z-index: -2;
+    }
+    &-m3 {
+        z-index: -3;
+    }
+    &-m4 {
+        z-index: -4;
+    }
+    &-m5 {
+        z-index: -5;
+    }
+}

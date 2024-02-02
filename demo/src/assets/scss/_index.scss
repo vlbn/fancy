@@ -4,23 +4,24 @@
 
 $family-sans-serif: "Quicksand", sans-serif;
 
-$green: #42b983;
-$blue: #2e2e2e;
-$paper: #fbfbfb;
-$grey: #d4d4d4;
+$color1: #42b983;
+$color2: #2e2e2e;
+$color3: #fbfbfb;
+$color4: #d4d4d4;
 
-@import "defaults.scss";
-@import "helpers.scss";
-@import "isFixed.scss";
-@import "transitions.scss";
+@import "01_defaults.scss";
+@import "02_helpers.scss";
+@import "03_isFixed.scss";
+@import "04_transitions.scss";
+@import "05_zIndex.scss";
 
-$primary: $blue;
-$link: $paper;
-$info: $grey;
-$success: $green;
-$warning: $paper;
-$danger: $blue;
-$dark: $blue;
-$text: $blue;
+$primary: $color2;
+$link: $color1;
+$info: $color1;
+$success: $color1;
+$warning: $color1;
+$danger: $color1;
+$dark: $color2;
+$text: $color2;
 
 @import "bulma/bulma.sass";

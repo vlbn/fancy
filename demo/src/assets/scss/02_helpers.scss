@@ -1,0 +1,68 @@
+/*
+
+  truly center, align and justify
+
+*/
+
+.centerXY {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+}
+
+/*
+
+  fill viewport
+
+*/
+
+.fv {
+  &-100 {
+    min-height: 100vh;
+  }
+  &-90 {
+    min-height: 90vh;
+  }
+  &-80 {
+    min-height: 80vh;
+  }
+  &-70 {
+    min-height: 70vh;
+  }
+  &-60 {
+    min-height: 60vh;
+  }
+  &-50 {
+    min-height: 50vh;
+  }
+}
+
+/*
+
+  misc
+
+*/
+
+.iPoint {
+  cursor: pointer;
+}
+
+.iTruncate {
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  max-width: 10rem;
+}
+
+mark {
+  vertical-align: middle;
+  display: inline-flex;
+  margin: 0rem 0.1rem;
+  padding: 0rem 0.2rem;
+  background-color: rgba(0, 0, 0, 0);
+}
