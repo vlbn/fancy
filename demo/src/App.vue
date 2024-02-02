@@ -63,8 +63,8 @@ let fancy = ref(false);
 
   <Transition name="fade" mode="out-in">
     
-    <section v-if="!fancy" class="is-flex is-justify-content-center fv-100 is-align-items-center">
-      click <mark @click="fancy = true" class="iPoint">here</mark>!
+    <section v-if="!fancy" class="fv-100 centerXY">
+       <mark @click="fancy = true" class="iPoint">click here</mark>
     </section>
 
     <section v-else>
@@ -102,7 +102,7 @@ let fancy = ref(false);
 
   <div class="m-0 is-fixed-bl">
     <a href="https://github.com/vlbn/fancy">
-      <GitHub customColor="black iPoint" />
+      <GitHub customColor="black" />
     </a>
   </div>
 
