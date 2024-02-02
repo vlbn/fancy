@@ -1,6 +1,6 @@
 <template>
-  <div class="cursor-a" :class="cursorA"></div>
-  <div class="cursor-b" :class="cursorB"></div>
+  <div class="cursor-a cursor"></div>
+  <div class="cursor-b cursor"></div>
 </template>
 
 <script setup>
@@ -11,14 +11,20 @@ import { gsap } from "gsap";
 const props = defineProps({
   trigger: {
     type: String,
-    default() {
-      return "a";
-    },
+    default: "a",
+  },
+  colorA: {
+    type: String,
+    default: "#2e2e2e",
+  },
+  colorB: {
+    type: String,
+    default: "#42b983",
   },
 });
 
-const cursorA = ref("blue");
-const cursorB = ref("green");
+let colorA_ = ref(props.colorA);
+let colorB_ = ref(props.colorB);
 
 let fancyTl = gsap.timeline({ paused: true });
 
@@ -55,7 +61,9 @@ onMounted(() => {
   });
 
   window.addEventListener("mousemove", cursorAttach);
+
   let iTrigger = document.querySelectorAll(props.trigger);
+
   for (let i = 0; i < iTrigger.length; i++) {
     iTrigger[i].addEventListener("mouseover", cursorIn);
     iTrigger[i].addEventListener("mouseout", cursorOut);
@@ -92,6 +100,7 @@ onMounted(() => {
       ">"
     )
     .reverse();
+
 });
 
 onBeforeUnmount(() => {
@@ -101,6 +110,7 @@ onBeforeUnmount(() => {
   });
 
   window.removeEventListener("mousemove", cursorAttach);
+
   gsap.to(".cursor-b, .cursor-a", {
     duration: 0,
     scale: 0,
@@ -111,43 +121,30 @@ onBeforeUnmount(() => {
 
 </script>
 
-<style lang="scss">
-
-$green: #42b983;
-$blue: #273849;
-
-.green {
-  background-color: $green;
-}
-
-.blue {
-  background-color: $blue;
-}
-
+<style scoped>
 .cursor {
-  &-a {
-    opacity: 0;
-    position: fixed;
-    width: 10px;
-    height: 10px;
-    left: -5px;
-    top: -5px;
-    border-radius: 100%;
-    z-index: 2;
-    pointer-events: none;
-  }
+  opacity: 0;
+  position: fixed;
+  border-radius: 100%;
+  pointer-events: none;
+}
 
-  &-b {
-    opacity: 0;
-    position: fixed;
-    width: 30px;
-    height: 30px;
-    left: -15px;
-    top: -15px;
-    border-radius: 100%;
-    z-index: 1;
-    pointer-events: none;
-    mix-blend-mode: multiply;
-  }
+.cursor-a {
+  background-color: v-bind(colorA_);
+  width: 10px;
+  height: 10px;
+  left: -5px;
+  top: -5px;
+  z-index: 2;
+}
+
+.cursor-b {
+  background-color: v-bind(colorB_);
+  width: 30px;
+  height: 30px;
+  left: -15px;
+  top: -15px;
+  z-index: 1;
+  mix-blend-mode: multiply;
 }
 </style>
