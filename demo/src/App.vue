@@ -1,14 +1,14 @@
 <script setup>
 import { ref, version, defineAsyncComponent } from "vue";
 
-const FancyWiki = defineAsyncComponent(() => import("./components/FancyWiki.vue"));
+const FancyWiki = defineAsyncComponent(() => import("./fancy/FancyWiki.vue"));
 
-import PkgIcon from "./components/icons/PkgIcon.vue";
-import GitHub from "./components/icons/GitHub.vue";
+import PkgIcon from "./components/PkgIcon.vue";
+import GitHub from "./components/GitHub.vue";
 
-import FancyCursor from "./components/FancyCursor.vue";
-import FancyMouseIcon from "./components/FancyMouseIcon.vue";
-import FancyPreLoader from "./components/FancyPreLoader.vue";
+import FancyCursor from "./fancy/FancyCursor.vue";
+import FancyMouseIcon from "./fancy/FancyMouseIcon.vue";
+import FancyPreLoader from "./fancy/FancyPreLoader.vue";
 
 console.log("📦 fancy VUE components");
 console.log(version);
