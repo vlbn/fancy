@@ -4,7 +4,7 @@ const article = await response.json();
 </script>
 
 <template>
-  <div class="is-flex is-justify-content-center fv-100 is-flex-direction-column is-align-items-center p-5">
+  <div class="basic">
 
     <div class="columns">
       <div class="columns container">
@@ -42,6 +42,14 @@ const article = await response.json();
 </template>
 
 <style scoped>
+.basic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    min-height: 100vh;
+}
+
 .z {
   z-index: -3;
 }
@@ -64,4 +72,5 @@ a {
   text-shadow: 2px 2px 0px rgba(255, 255, 255, 1),
     5px 4px 0px rgba(0, 0, 0, 0.15);
 
-}</style>
+}
+</style>
