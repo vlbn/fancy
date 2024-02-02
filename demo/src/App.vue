@@ -4,7 +4,7 @@ import { ref, version, defineAsyncComponent } from "vue";
 const FancyWiki = defineAsyncComponent(() => import("./components/FancyWiki.vue"));
 
 import PkgIcon from "./components/icons/PkgIcon.vue";
-import GitHubLogo from "./components/logos/GitHubLogo.vue";
+import GitHub from "./components/icons/GitHub.vue";
 
 import FancyCursor from "./components/FancyCursor.vue";
 import FancyMouseIcon from "./components/FancyMouseIcon.vue";
@@ -102,7 +102,7 @@ let fancy = ref(false);
 
   <div class="m-0 is-fixed-bl">
     <a href="https://github.com/vlbn/fancy">
-      <GitHubLogo customColor="black iPoint" />
+      <GitHub customColor="black iPoint" />
     </a>
   </div>
 
