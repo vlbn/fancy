@@ -54,6 +54,20 @@ const cursorAttach = ($event) => {
   });
 };
 
+const cursorAnimate = ($event) => {
+  let iTrigger = document.querySelectorAll(props.trigger);
+  for (let i = 0; i < iTrigger.length; i++) {
+    iTrigger[i].addEventListener("mouseover", cursorIn);
+    iTrigger[i].addEventListener("mouseout", cursorOut);
+    iTrigger[i].addEventListener("click", cursorOut);
+    iTrigger[i].addEventListener("mousedown", cursorOut);
+  }
+  gsap.set(iTrigger, {
+    zIndex: "1",
+    position: "relative",
+  });
+};
+
 onMounted(() => {
 
   gsap.set("html", {
@@ -61,20 +75,7 @@ onMounted(() => {
   });
 
   window.addEventListener("mousemove", cursorAttach);
-
-  let iTrigger = document.querySelectorAll(props.trigger);
-
-  for (let i = 0; i < iTrigger.length; i++) {
-    iTrigger[i].addEventListener("mouseover", cursorIn);
-    iTrigger[i].addEventListener("mouseout", cursorOut);
-    iTrigger[i].addEventListener("click", cursorOut);
-    iTrigger[i].addEventListener("mousedown", cursorOut);
-  }
-
-  gsap.set(iTrigger, {
-    zIndex: "1",
-    position: "relative",
-  });
+  window.addEventListener("mouseover", cursorAnimate);
 
   fancyTl = gsap
     .timeline()
@@ -109,13 +110,14 @@ onBeforeUnmount(() => {
     cursor: "default",
   });
 
-  window.removeEventListener("mousemove", cursorAttach);
-
   gsap.to(".cursor-b, .cursor-a", {
     duration: 0,
     scale: 0,
     autoAlpha: 0,
   });
+
+  window.removeEventListener("mousemove", cursorAttach);
+  window.removeEventListener("mouseover", cursorAnimate);
 
 });
 
