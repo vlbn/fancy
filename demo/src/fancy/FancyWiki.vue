@@ -1,6 +1,32 @@
 <script setup>
+import { ref, computed } from 'vue';
+
 const response = await fetch('https://en.wikipedia.org/api/rest_v1/page/random/summary');
 const article = await response.json();
+
+const longLink = ref(article.content_urls.mobile.page);
+
+const longExtract = ref(article.extract);
+
+const media = ref(article.thumbnail.source);
+
+const truncatedExtract = computed(() => {
+  const length = 400;
+  if (longExtract.value.length > length) {
+    return longExtract.value.substring(0, length) + "...";
+  } else {
+    return longExtract.value;
+  }
+});
+
+const truncatedLink = computed(() => {
+  const length = 50;
+  if (longLink.value.length > length) {
+    return longLink.value.substring(0, length) + "...";
+  } else {
+    return longLink.value;
+  }
+});
 </script>
 
 <template>
@@ -10,11 +36,7 @@ const article = await response.json();
       <div class="columns container">
 
         <div class="column is-5 z">
-
-          <figure class="is-pulled-right">
-            <img :src=article.thumbnail.source>
-          </figure>
-
+          <div :style="{ backgroundImage: `url(${media})` }" class="wikiMedia is-pulled-right"></div>
         </div>
 
         <div class="column is-6 mt-3">
@@ -27,11 +49,10 @@ const article = await response.json();
           </p>
 
           <div class="block">
-            {{ article.extract }}
+            {{ truncatedExtract }}
           </div>
 
-          <a :href=article.content_urls.mobile.page target="_blank"><small>{{ article.content_urls.mobile.page
-          }}</small></a>
+          <a :href=article.content_urls.mobile.page target="_blank"><small>{{ truncatedLink }}</small></a>
 
         </div>
 
@@ -43,26 +64,15 @@ const article = await response.json();
 
 <style scoped>
 .basic {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: column wrap;
-    min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  min-height: 100vh;
 }
 
 .z {
   z-index: -3;
-}
-
-img {
-  filter: grayscale(1);
-  -webkit-filter: grayscale(1);
-  -moz-filter: grayscale(1);
-  opacity: .5;
-}
-
-a {
-  color: brown
 }
 
 .title {
@@ -71,6 +81,17 @@ a {
   margin-left: -3.3rem;
   text-shadow: 2px 2px 0px rgba(255, 255, 255, 1),
     5px 4px 0px rgba(0, 0, 0, 0.15);
+}
 
+.wikiMedia {
+  opacity: .5;
+  position: relative;
+  top: -5rem;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 </style>
