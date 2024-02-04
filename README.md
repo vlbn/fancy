@@ -4,4 +4,4 @@
 - vue 3.4.13
 - gsap 3.12.4
 
-https://fancycomponents.web.app
+`work in constant progress`
