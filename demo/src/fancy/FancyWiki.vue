@@ -11,7 +11,7 @@ const longExtract = ref(article.extract);
 const media = ref(article.thumbnail.source);
 
 const truncatedExtract = computed(() => {
-  const length = 400;
+  const length = 300;
   if (longExtract.value.length > length) {
     return longExtract.value.substring(0, length) + "...";
   } else {
@@ -90,7 +90,7 @@ const truncatedLink = computed(() => {
   border-radius: 50%;
   width: 300px;
   height: 300px;
-  background-position: center;
+  background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
 }
