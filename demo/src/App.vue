@@ -1,4 +1,5 @@
 <script setup>
+
 import { ref, version, defineAsyncComponent } from "vue";
 
 const FancyWiki = defineAsyncComponent(() => import("./fancy/FancyWiki.vue"));
@@ -24,50 +25,40 @@ let fancy = ref(false);
   </Transition>
 
   <Transition name="fade">
-    <div class="is-fixed-t mt-6" v-if="fancy">
-      <FancyMouseIcon /> 
+    <div class="is-fixed-r mr-6" v-if="fancy">
+      <FancyMouseIcon />
     </div>
   </Transition>
 
   <div class="is-fixed-tl">
-    <div>
-      <PkgIcon class="mr-1 mb-3" /> fancy <mark><b>VUE</b></mark> components
-    </div>
-    <ul class="mb-3">
-      <li>- FancyMouseIcon</li>
-      <li>- FancyCursor</li>
-      <li>- FancyWiki</li>
-      <li>- FancyPreLoader</li>
-    </ul>
-    <div class="field is-grouped is-grouped-multiline mb-2">
-      <div class="control">
-        <div class="tags has-addons">
-          <span class="tag is-dark">gsap</span>
-          <span class="tag is-info">3.12.4</span>
+    <a>
+      <div class="checkbox-wrapper-5">
+        <div class="check">
+          <input id="check-5" type="checkbox" v-model="fancy">
+          <label for="check-5"></label>
         </div>
       </div>
-      <div class="control">
-        <div class="tags has-addons">
-          <span class="tag is-dark">vue</span>
-          <span class="tag is-info">3.4.13</span>
-        </div>
-      </div>
-    </div>
-    <div>
-      <label class="switch">
-        <input type="checkbox" id="checkbox" v-model="fancy" />
-        <span class="slider round"></span>
-      </label>
-    </div>
+    </a>
   </div>
 
   <Transition name="fade" mode="out-in">
-    
+
     <section v-if="!fancy" class="fv-100 centerXY">
-       <mark @click="fancy = true" class="iPoint">click here</mark>
+      <div>
+        <PkgIcon class="mr-1 mb-3" /> fancy <mark><b>VUE</b></mark> components
+      </div>
+      <ul>
+        <li>- FancyMouseIcon</li>
+        <li>- FancyCursor</li>
+        <li>- FancyWiki</li>
+        <li>- FancyPreLoader</li>
+      </ul>
+      <div class="code my-4"><mark>work in constant progress</mark></div>
+      <button @click="fancy = true" class="button is-success is-rounded">see in action</button>
     </section>
 
     <section v-else>
+      
       <Transition name="fade" mode="out-in">
         <Suspense>
 
