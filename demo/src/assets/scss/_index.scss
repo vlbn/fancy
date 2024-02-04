@@ -4,9 +4,9 @@
 
 $family-sans-serif: "Quicksand", sans-serif;
 
-$color1: #42b983;
+$color1: #4d4d4d;
 $color2: #2e2e2e;
-$color3: #fbfbfb;
+$color3: #e4147c;
 $color4: #d4d4d4;
 
 @import "01_defaults.scss";
@@ -16,7 +16,7 @@ $color4: #d4d4d4;
 @import "05_zIndex.scss";
 
 $primary: $color2;
-$link: $color1;
+$link: $color3;
 $info: $color1;
 $success: $color1;
 $warning: $color1;
