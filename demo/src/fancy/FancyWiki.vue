@@ -93,5 +93,7 @@ const truncatedLink = computed(() => {
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
 }
+
 </style>
