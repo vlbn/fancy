@@ -24,6 +24,14 @@ a {
     -webkit-tap-highlight-color: transparent;
 }
 
+a,
+a:hover,
+a:active,
+a:visited {
+    text-decoration: none;
+    color: transparent;
+}
+
 img {
     border: 0;
     -webkit-user-drag: none;
@@ -42,21 +50,21 @@ img {
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #9c9c9c;
+    background-color: #42b983;
     border-radius: 5px;
 }
 
 :root {
-    scrollbar-color: #9c9c9c transparent;
+    scrollbar-color: #42b983;
     scrollbar-width: thin;
 }
 
 ::-moz-selection {
     color: white;
-    background: #9c9c9c;
+    background: #42b983;
 }
 
 ::selection {
     color: white;
-    background: #9c9c9c;
+    background: #42b983;
 }
