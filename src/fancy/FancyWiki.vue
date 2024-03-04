@@ -32,23 +32,23 @@ const truncatedLink = computed(() => {
 <template>
   <div class="basic">
 
-    <div class="columns">
-      <div class="columns container">
+    <div class="">
+      <div class="">
 
-        <div class="column is-5 z">
-          <div :style="{ backgroundImage: `url(${media})` }" class="wikiMedia is-pulled-right"></div>
+        <div class="z">
+          <div :style="{ backgroundImage: `url(${media})` }" class="wikiMedia"></div>
         </div>
 
-        <div class="column is-6 mt-3">
+        <div class="mt-3">
 
-          <p class="title is-size-1 has-text-success">
+          <p class="title">
             {{ article.title }}
           </p>
           <p class="subtitle mt-5">
             <b>{{ article.description }}</b>
           </p>
 
-          <div class="block">
+          <div class="">
             {{ truncatedExtract }}
           </div>
 
