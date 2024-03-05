@@ -39,6 +39,7 @@ console.log(version);
       <DeMo />
     </section>
     <section v-else>
+
       <Transition name="fade" mode="out-in">
         <Suspense>
           <template #default>
@@ -49,6 +50,18 @@ console.log(version);
           </template>
         </Suspense>
       </Transition>
+
+      <Transition name="fade" mode="out-in">
+        <Suspense>
+          <template #default>
+            <FancyWiki />
+          </template>
+          <template #fallback>
+            <FancyPreLoader />
+          </template>
+        </Suspense>
+      </Transition>
+
     </section>
   </Transition>
 
