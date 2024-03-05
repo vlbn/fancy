@@ -1,7 +1,9 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed } from "vue";
 
-const response = await fetch('https://en.wikipedia.org/api/rest_v1/page/random/summary');
+const response = await fetch(
+  "https://en.wikipedia.org/api/rest_v1/page/random/summary"
+);
 const article = await response.json();
 
 const longLink = ref(article.content_urls.mobile.page);
@@ -31,16 +33,16 @@ const truncatedLink = computed(() => {
 
 <template>
   <div class="basic">
-
     <div class="">
       <div class="">
-
         <div class="z">
-          <div :style="{ backgroundImage: `url(${media})` }" class="wikiMedia"></div>
+          <div
+            :style="{ backgroundImage: `url(${media})` }"
+            class="wikiMedia"
+          ></div>
         </div>
 
         <div class="mt-3">
-
           <p class="title">
             {{ article.title }}
           </p>
@@ -52,17 +54,20 @@ const truncatedLink = computed(() => {
             {{ truncatedExtract }}
           </div>
 
-          <a :href=article.content_urls.mobile.page target="_blank"><small>{{ truncatedLink }}</small></a>
-
+          <a :href="article.content_urls.mobile.page" target="_blank"
+            ><small>{{ truncatedLink }}</small></a
+          >
         </div>
-
       </div>
     </div>
-
   </div>
 </template>
 
 <style scoped>
+a {
+  color: fuchsia;
+}
+
 .basic {
   display: flex;
   align-items: center;
@@ -84,7 +89,7 @@ const truncatedLink = computed(() => {
 }
 
 .wikiMedia {
-  opacity: .5;
+  opacity: 0.5;
   position: relative;
   top: -5rem;
   border-radius: 50%;
@@ -95,5 +100,4 @@ const truncatedLink = computed(() => {
   background-repeat: no-repeat;
   box-shadow: rgba(0, 0, 0, 0.1) -4px 9px 25px -6px;
 }
-
 </style>
