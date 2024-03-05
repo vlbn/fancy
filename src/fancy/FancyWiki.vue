@@ -4,6 +4,7 @@ import { ref, computed } from "vue";
 const response = await fetch(
   "https://en.wikipedia.org/api/rest_v1/page/random/summary"
 );
+
 const article = await response.json();
 
 const longLink = ref(article.content_urls.mobile.page);
@@ -32,43 +33,24 @@ const truncatedLink = computed(() => {
 </script>
 
 <template>
-  <div class="basic">
-    <div class="">
-      <div class="">
-        <div class="z">
-          <div
-            :style="{ backgroundImage: `url(${media})` }"
-            class="wikiMedia"
-          ></div>
-        </div>
-
-        <div class="mt-3">
-          <p class="title">
-            {{ article.title }}
-          </p>
-          <p class="subtitle mt-5">
-            <b>{{ article.description }}</b>
-          </p>
-
-          <div class="">
-            {{ truncatedExtract }}
-          </div>
-
-          <a :href="article.content_urls.mobile.page" target="_blank"
-            ><small>{{ truncatedLink }}</small></a
-          >
-        </div>
-      </div>
-    </div>
+  <div class="wrapper">
+    <div :style="{ backgroundImage: `url(${media})` }" class="wikiMedia"></div>
+    <h1 class="title" style="max-width: 50%;">
+      {{ article.title }}
+    </h1>
+    <h2 class="subtitle">
+      {{ article.description }}
+    </h2>
+    <p style="max-width: 50%;">{{ truncatedExtract }}</p>
+    <a :href="article.content_urls.mobile.page" target="_blank"
+      ><small>{{ truncatedLink }}</small></a
+    >
   </div>
 </template>
 
 <style scoped>
-a {
-  color: fuchsia;
-}
-
-.basic {
+.wrapper {
+  padding: 0 4rem 0 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,25 +58,30 @@ a {
   min-height: 100vh;
 }
 
-.z {
-  z-index: -3;
+a {
+  color: fuchsia;
 }
 
 .title {
+  font-weight: 600;
   font-size: 4rem !important;
+  margin: 1.3rem 0rem 1.3rem 0rem;
   line-height: 3rem;
-  margin-left: -3.3rem;
   text-shadow: 2px 2px 0px rgba(255, 255, 255, 1),
     5px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
+.subtitle {
+  font-size: 2rem !important;
+  font-weight: 400;
+  margin: 0rem;
+}
+
 .wikiMedia {
   opacity: 0.5;
-  position: relative;
-  top: -5rem;
   border-radius: 50%;
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
