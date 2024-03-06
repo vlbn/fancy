@@ -6,4 +6,4 @@
 - FancyWiki
 - FancyPreLoader
 
-`work in constant progress`
+`work in constant progress, mostly to avoid getting rusty with VUE`
