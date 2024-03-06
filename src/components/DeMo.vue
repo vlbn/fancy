@@ -17,7 +17,8 @@ const { setSwitchState } = inject("store");
       <li>FancyWiki</li>
       <li>FancyPreLoader</li>
     </ul>
-    <pre>work in constant progress, mostly to avoid getting rusty with VUE</pre>
+    <pre>work in constant progress</pre>
+    <sub>i do mantain this mostly to avoid getting rusty with VUE</sub>
     <button @click="setSwitchState" role="button" class="button-85">
       see in action
     </button>
@@ -51,6 +52,14 @@ div {
     background-color: #afb8c133;
     border-radius: 6px;
     margin: 1.5rem 0 1.5rem 0;
+  }
+  sub {
+    font-size: .9rem;
+    font-style: oblique;
+    margin: 0rem;
+  }
+  button {
+    margin-top: 2rem;
   }
 }
 
