@@ -1,9 +1,7 @@
 <script setup>
 import { inject } from "vue";
 import PkgIcon from "@/components/PkgIcon.vue";
-
 const { setSwitchState } = inject("store");
-
 </script>
 
 <template>
@@ -14,12 +12,10 @@ const { setSwitchState } = inject("store");
     <ul>
       <li>FancyMouseIcon</li>
       <li>FancyCursor</li>
-      <li>FancyWiki</li>
-      <li>FancyPreLoader</li>
     </ul>
     <pre>work in constant progress</pre>
     <sub>i do mantain this mostly to avoid getting rusty with VUE</sub>
-    <button @click="setSwitchState" role="button" class="button-85">
+    <button @click.once="setSwitchState" role="button" class="button-85">
       see in action
     </button>
   </div>
