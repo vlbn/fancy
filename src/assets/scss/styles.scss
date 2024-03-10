@@ -93,31 +93,3 @@ img {
   transition: all 0.2s ease-out;
   animation: all 0.2s;
 }
-
-/*
-
-    App
-
-*/
-
-.mouse_icon {
-  position: fixed;
-  height: 100vh;
-  top: 0px;
-  bottom: 0px;
-  right: 1rem;
-  display: flex;
-  align-items: center;
-}
-
-.github {
-  position: fixed;
-  bottom: 1rem;
-  left: 1rem;
-}
-
-.switch {
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-}
