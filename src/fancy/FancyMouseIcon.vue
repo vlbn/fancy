@@ -80,26 +80,27 @@ const detectScrollPos = () => {
       background: colorC_.value,
     });
   }
-}
+};
 
 window.addEventListener("scroll", detectScrollPos);
 
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", detectScrollPos);
 });
-
 </script>
 
 <template>
-  <div class="mouse-container">
-    <div class="mouse-body">
-      <div class="mouse-wheel"></div>
+  <div>
+    <div class="mouse-frame">
+      <div class="mouse-body">
+        <div class="mouse-wheel"></div>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.mouse-container {
+.mouse-frame {
   width: 25px;
   height: 40px;
 }
