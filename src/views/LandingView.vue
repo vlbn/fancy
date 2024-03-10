@@ -1,15 +1,17 @@
 <script setup>
 import { version, defineAsyncComponent, inject } from "vue";
 
+import PreLoader from "@/components/PreLoader.vue";
 import GitHub from "@/components/GitHub.vue";
 import SwitCh from "@/components/SwitCh.vue";
-import DeMo from "@/components/DeMo.vue";
+import LandingContent from "@/components/LandingContent.vue";
 
 import FancyCursor from "@/fancy/FancyCursor.vue";
 import FancyMouseIcon from "@/fancy/FancyMouseIcon.vue";
-import FancyPreLoader from "@/fancy/FancyPreLoader.vue";
 
-const FancyWiki = defineAsyncComponent(() => import("@/fancy/FancyWiki.vue"));
+const WikiPedia = defineAsyncComponent(() =>
+  import("@/components/WikiPedia.vue")
+);
 
 const { switchState, setSwitchState } = inject("store");
 
@@ -19,47 +21,25 @@ console.log(version);
 
 <template>
   <div>
+
     <div class="switch">
       <SwitCh :isOn="switchState" @click="setSwitchState" />
     </div>
 
-    <Transition name="fade">
-      <div v-if="switchState">
-        <FancyCursor />
-      </div>
-    </Transition>
-
-    <Transition name="fade">
-      <div class="mouse_icon" v-if="switchState">
-        <FancyMouseIcon />
-      </div>
-    </Transition>
-
     <Transition name="fade" mode="out-in">
       <section v-if="!switchState">
-        <DeMo />
+        <LandingContent />
       </section>
       <section v-else>
+        <FancyMouseIcon class="mouse-icon" />
+        <FancyCursor />
         <Transition name="fade" mode="out-in">
           <Suspense>
             <template #default>
-              <FancyWiki />
+              <WikiPedia />
             </template>
-
             <template #fallback>
-              <FancyPreLoader />
-            </template>
-          </Suspense>
-        </Transition>
-
-        <Transition name="fade" mode="out-in">
-          <Suspense>
-            <template #default>
-              <FancyWiki />
-            </template>
-
-            <template #fallback>
-              <FancyPreLoader />
+              <PreLoader />
             </template>
           </Suspense>
         </Transition>
@@ -71,5 +51,30 @@ console.log(version);
         <GitHub />
       </a>
     </div>
+
   </div>
 </template>
+
+<style scoped>
+.mouse-icon {
+  position: fixed;
+  height: 100vh;
+  top: 0px;
+  bottom: 0px;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.github {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.switch {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+}
+</style>
